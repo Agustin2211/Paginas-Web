@@ -1,30 +1,30 @@
 <!DOCTYPE html>
 <html lang="es-AR">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>White bouquet</title>
-  <link rel="stylesheet" href="./src/whitebouquet.css">
-  <link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
-  <script src="./scripts/whitebouquet.js" async></script>
-</head>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>White bouquet</title>
+    <link rel="stylesheet" href="./src/whitebouquet.css">
+    <link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+    <script src="./scripts/whitebouquet.js" async></script>
+  </head>
 
-<body>
-  <header>
-    <div class="navbar">
-      <strong>
-        <div class="logo">
-          Whitebouquet.com
-        </div>
-      </strong>
-    </div>
+  <body>
+    <header>
+      <div class="navbar">
+        <strong>
+          <div class="logo">
+            Whitebouquet.com
+          </div>
+        </strong>
+      </div>
 
-    <div class="navbar-container">
-      <div class="topnav">
-        <a href="./contacto.html">Contacto</a>
-        <a href="./sobreNosotros.html">Sobre Nosotros</a>
-        <a href="./redesSociales.html">Redes Sociales</a>
+      <div class="navbar-container">
+        <div class="topnav">
+          <a href="./contacto.html">Contacto</a>
+          <a href="./sobreNosotros.html">Sobre Nosotros</a>
+          <a href="./redesSociales.html">Redes Sociales</a>
       </div>
 
       <!--CART-->
@@ -38,122 +38,118 @@
         <h1 class="section-header">CART</h1>
         <div class="cart-row">
           <span class="cart-item cart-header cart-column">ITEM</span>
-          <span class="cart-price cart-header cart-column">PRICE</span>
-          <span class="cart-quantity cart-header cart-column">QUANTITY</span>
+          <span class="cart-price cart-header cart-column">PRECIO</span>
+          <span class="cart-quantity cart-header cart-column">CANTIDAD</span>
+      
         </div>
-        <div class="cart-items">
+          <div class="cart-items">
         </div>
+        
         <div class="cart-total">
           <strong class="cart-total-title">Total</strong>
           <span class="cart-total-price">$0</span>
         </div>
 
-        <button class="btn btn-primary btn-purchase" type="button">PURCHASE</button>
-      </section>
+          <button class="btn btn-primary btn-purchase" type="button">COMPRAR</button>
+        </section>
 
+      </div>
+    </header>
+
+    <div class="main-container">
+      <P class="title">Flower Bouquets</P>
     </div>
-  </header>
-
-  <div class="main-container">
-    <P class="title">Flower Bouquets</P>
-  </div>
 
 
-  <div id="filterButtons">
-    <button class="btn active" onclick="filterSelection('all')">Todas</button>
-    <button class="btn" onclick="filterSelection('Roses')">Rosas</button>
-    <button class="btn" onclick="filterSelection('Tulips')">Tulipanes</button>
-    <button class="btn" onclick="filterSelection('Orchids')">Orquideas</button>
-  </div>
-
-
-  <section class="container">
-    <div class="products">
-
-      <div class="product Roses">
-        <img src="./src/roses.jpeg" class="product__image">
-        <h5 class="product-title">PRIMAVERA DE ENSUEÑO</h5>
-        Ramo de Rosas mixtas
-        <div class="shop-item-details">
-          <h3 class="product__price">$38</h3>
-          <button class="btn btn--primary ADD_TO_CART">Agregar al Carrito</button>
-        </div>
-
-
-      </div>
-
-
-      <div class="product Tulips">
-        <img src="./src/tulips.jpg" class="product__image">
-        <h5 class="product-title">PRECIOSO ATARDECER</h5>
-        Ramo mixto de Tulipanes
-        <div class="shop-item-details">
-          <h3 class="product__price">$48</h3>
-          <button class="btn btn--primary ADD_TO_CART">Agregar al Carrito</button>
-        </div>
-
-
-      </div>
-
-      <div class="product Orchids">
-        <img src="./src/orchids.jpeg" class="product__image">
-        <h5 class="product-title">ORQUIDEAS ENCANTADORAS</h5>
-        Ramo mixto de Orquideas
-        <div class="shop-item-details">
-          <h3 class="product__price">$53</h3>
-          <button class="btn btn--primary ADD_TO_CART">Agregar al Carrito</button>
-        </div>
-
-
-      </div>
+    <div id="filterButtons">
+      <button class="btn active" onclick="filterSelection('all')">Todas</button>
+      <button class="btn" onclick="filterSelection('Roses')">Rosas</button>
+      <button class="btn" onclick="filterSelection('Tulips')">Tulipanes</button>
+      <button class="btn" onclick="filterSelection('Orchids')">Orquideas</button>
     </div>
-  </section>
 
-  <script>
-    filterSelection('all')
-    function filterSelection(c) {
-      var x, i;
-      x = document.getElementsByClassName("product");
-      if (c == "all") c = "";
-      for (i = 0; i < x.length; i++) {
-        w3RemoveClass(x[i], "show");
-        if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
-      }
-    }
 
-    function w3AddClass(element, name) {
-      var i, arrl, arr2;
-      arr1 = element.className.split(" ");
-      arr2 = name.split(" ");
-      for (i = 0; i < arr2.length; i++) {
-        if (arr1.indexOf(arr2[i]) == -1) { element.className += " " + arr2[i]; }
-      }
-    }
+    <section class="container">
+    
+      <div class="products">
 
-    function w3RemoveClass(element, name) {
-      var i, arr1, arr2;
-      arr1 = element.className.split(" ");
-      arr2 = name.split(" ");
-      for (i = 0; i < arr2.length; i++) {
-        while (arr1.indexOf(arr2[i]) > -1) {
-          arr1.splice(arr1.indexOf(arr2[i]), 1);
+        <div class="product Roses">
+          <img src="./src/roses.jpeg" class="product__image">
+          <h5 class="product-title">PRIMAVERA DE ENSUEÑO</h5>
+          Ramo de Rosas mixtas
+          <div class="shop-item-details">
+            <h3 class="product__price">$38</h3>
+            <button class="btn btn--primary ADD_TO_CART">Agregar al Carrito</button>
+          </div>
+        </div>
+      
+        <div class="product Tulips">
+          <img src="./src/tulips.jpg" class="product__image">
+          <h5 class="product-title">PRECIOSO ATARDECER</h5>
+          Ramo mixto de Tulipanes
+          <div class="shop-item-details">
+            <h3 class="product__price">$48</h3>
+            <button class="btn btn--primary ADD_TO_CART">Agregar al Carrito</button>
+          </div>
+        </div>
+
+        <div class="product Orchids">
+          <img src="./src/orchids.jpeg" class="product__image">
+          <h5 class="product-title">ORQUIDEAS ENCANTADORAS</h5>
+          Ramo mixto de Orquideas
+          <div class="shop-item-details">
+            <h3 class="product__price">$53</h3>
+            <button class="btn btn--primary ADD_TO_CART">Agregar al Carrito</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      filterSelection('all')
+      function filterSelection(c) {
+        var x, i;
+        x = document.getElementsByClassName("product");
+        if (c == "all") c = "";
+        for (i = 0; i < x.length; i++) {
+          w3RemoveClass(x[i], "show");
+          if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
         }
       }
-      element.className = arr1.join(" ");
-    }
 
-    // Add active class to the current button (highlight it)
-    var btnContainer = document.getElementById("filterButtons");
-    var btns = btnContainer.getElementsByClassName("btn");
-    for (var i = 0; i < btns.length; i++) {
-      btns[i].addEventListener("click", function () {
-        var current = document.getElementsByClassName("active");
-        current[0].className = current[0].className.replace(" active", "");
-        this.className += " active";
-      });
-    }
-  </script>
+      function w3AddClass(element, name) {
+        var i, arrl, arr2;
+        arr1 = element.className.split(" ");
+        arr2 = name.split(" ");
+        for (i = 0; i < arr2.length; i++) {
+          if (arr1.indexOf(arr2[i]) == -1) { element.className += " " + arr2[i]; }
+        }
+      }
 
-</body>
+      function w3RemoveClass(element, name) {
+        var i, arr1, arr2;
+        arr1 = element.className.split(" ");
+        arr2 = name.split(" ");
+        for (i = 0; i < arr2.length; i++) {
+          while (arr1.indexOf(arr2[i]) > -1) {
+            arr1.splice(arr1.indexOf(arr2[i]), 1);
+          }
+        }
+        element.className = arr1.join(" ");
+      }
+
+      // Add active class to the current button (highlight it)
+      var btnContainer = document.getElementById("filterButtons");
+      var btns = btnContainer.getElementsByClassName("btn");
+      for (var i = 0; i < btns.length; i++) {
+        btns[i].addEventListener("click", function () {
+          var current = document.getElementsByClassName("active");
+          current[0].className = current[0].className.replace(" active", "");
+          this.className += " active";
+        });
+      }
+    </script>
+
+  </body>
 
 </html>
